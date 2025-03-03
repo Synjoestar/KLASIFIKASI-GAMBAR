@@ -1,39 +1,39 @@
-# 🌾 Rice Image Classification  
+# 🌾 Rice Image Classification
 
-A deep learning-based image classification model that classifies five types of rice grains using **Convolutional Neural Networks (CNN)**. The model is trained and evaluated using **TensorFlow** and **Keras**, with support for inference using **TensorFlow SavedModel**, **TensorFlow Lite (TFLite)**, and **TensorFlow.js (TFJS)**.  
-
----
-
-## 📑 Table of Contents  
-
-- [📊 Dataset](#-dataset)  
-- [📁 Project Structure](#-project-structure)  
-- [⚙️ Installation](#-installation)  
-- [🏋️ Training the Model](#-training-the-model)  
-- [📈 Model Evaluation](#-model-evaluation)  
-- [🚀 Exporting the Model](#-exporting-the-model)  
-- [🔍 Inference](#-inference)  
-- [📂 Repository](#-repository)  
-- [👨‍💻 Contributors](#-contributors)  
-- [📜 License](#-license)  
+A deep learning-based image classification model that classifies five types of rice grains using **Convolutional Neural Networks (CNN)**. The model is trained and evaluated using **TensorFlow** and **Keras**, with support for inference using **TensorFlow SavedModel**, **TensorFlow Lite (TFLite)**, and **TensorFlow.js (TFJS)**.
 
 ---
 
-## 📊 Dataset  
+## 📑 Table of Contents
 
-The dataset used for this project is the **Rice Image Dataset**, which contains five types of rice grains:  
-
-- 🌾 **Arborio**  
-- 🌾 **Basmati**  
-- 🌾 **Ipsala**  
-- 🌾 **Jasmine**  
-- 🌾 **Karacadag**  
-
-**Dataset Source:** [Kaggle - Rice Image Dataset](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset)  
+- [📊 Dataset](#-dataset)
+- [📁 Project Structure](#-project-structure)
+- [⚙️ Installation](#-installation)
+- [🏋️ Training the Model](#-training-the-model)
+- [📈 Model Evaluation](#-model-evaluation)
+- [🚀 Exporting the Model](#-exporting-the-model)
+- [🔍 Inference](#-inference)
+- [📂 Repository](#-repository)
+- [👨‍💻 Contributors](#-contributors)
+- [📜 License](#-license)
 
 ---
 
-## 📁 Project Structure  
+## 📊 Dataset
+
+The dataset used for this project is the **Rice Image Dataset**, which contains five types of rice grains:
+
+- 🌾 **Arborio**
+- 🌾 **Basmati**
+- 🌾 **Ipsala**
+- 🌾 **Jasmine**
+- 🌾 **Karacadag**
+
+**Dataset Source:** [Kaggle - Rice Image Dataset](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset)
+
+---
+
+## 📁 Project Structure
 
 ```bash
 submission
@@ -51,60 +51,79 @@ submission
 └───requirements.txt
 ```
 
-## ⚙️ Installation
-### 1️⃣ Clone the repository
 ---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the repository
+
+```bash
 git clone https://github.com/Synjoestar/KLASIFIKASI-GAMBAR.git
 cd KLASIFIKASI-GAMBAR
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
 ---
 
-2️⃣ Install dependencies
-bash
-Salin
-Edit
-pip install -r requirements.txt
-🏋️ Training the Model
-Run the Jupyter Notebook (notebook.ipynb) to train the model. The model will:
+## 🏋️ Training the Model
 
-✅ Load and preprocess the dataset
-✅ Train using a CNN architecture
-✅ Implement data augmentation and callbacks
-✅ Save the trained model in multiple formats
+Run the Jupyter Notebook (`notebook.ipynb`) to train the model. The model will:
 
-📈 Model Evaluation
-🔹 Accuracy and loss curves are plotted for visualization.
-🔹 A classification report and confusion matrix are generated.
-🔹 The model is validated using test images.
+✅ Load and preprocess the dataset  
+✅ Train using a CNN architecture  
+✅ Implement data augmentation and callbacks  
+✅ Save the trained model in multiple formats  
 
-🚀 Exporting the Model
+---
+
+## 📈 Model Evaluation
+
+- 🔹 Accuracy and loss curves are plotted for visualization.
+- 🔹 A classification report and confusion matrix are generated.
+- 🔹 The model is validated using test images.
+
+---
+
+## 🚀 Exporting the Model
+
 The trained model is saved in multiple formats for different use cases:
 
-📌 SavedModel (TensorFlow)
-python
-Salin
-Edit
+### 📌 SavedModel (TensorFlow)
+
+```python
 model.save("saved_model_rice")
-📌 TensorFlow Lite (TFLite)
-python
-Salin
-Edit
+```
+
+### 📌 TensorFlow Lite (TFLite)
+
+```python
 import tensorflow as tf
 
 converter = tf.lite.TFLiteConverter.from_saved_model("saved_model_rice")
 tflite_model = converter.convert()
 with open("tflite/model.tflite", "wb") as f:
     f.write(tflite_model)
-📌 TensorFlow.js (TFJS)
-bash
-Salin
-Edit
+```
+
+### 📌 TensorFlow.js (TFJS)
+
+```bash
 pip install tensorflowjs
 tensorflowjs_converter --input_format=tf_saved_model --output_node_names='Predictions' --saved_model_tags=serve saved_model_rice tfjs_model
-🔍 Inference
-Perform inference using TFLite
-python
-Salin
-Edit
+```
+
+---
+
+## 🔍 Inference
+
+### Perform inference using TFLite
+
+```python
 import tensorflow.lite as tflite
 from PIL import Image
 import numpy as np
