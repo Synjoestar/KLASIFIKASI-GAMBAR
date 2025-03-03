@@ -29,7 +29,7 @@ The dataset used for this project is the **Rice Image Dataset**, which contains 
 - 🌾 **Jasmine**  
 - 🌾 **Karacadag**  
 
-**Dataset Source:** [Kaggle - Rice Image Dataset](https://www.kaggle.com/datasets)  
+**Dataset Source:** [Kaggle - Rice Image Dataset](https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset)  
 
 ---
 
