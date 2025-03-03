@@ -49,6 +49,7 @@ submission
 ├───notebook.ipynb
 ├───README.md
 └───requirements.txt
+```
 
 ## ⚙️ Installation
 ### 1️⃣ Clone the repository
