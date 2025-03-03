@@ -50,13 +50,13 @@ submission
 ├───README.md
 └───requirements.txt
 
-⚙️ Installation
-1️⃣ Clone the repository
-bash
-Salin
-Edit
+## ⚙️ Installation
+### 1️⃣ Clone the repository
+---
 git clone https://github.com/Synjoestar/KLASIFIKASI-GAMBAR.git
 cd KLASIFIKASI-GAMBAR
+---
+
 2️⃣ Install dependencies
 bash
 Salin
